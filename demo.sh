@@ -40,24 +40,24 @@ echo ""
 # Paso 2: Iniciar servidores en background
 show_step "Iniciando servidores en puertos 8080 (TCP), 3000 (HTTP), 9090 (gRPC)..."
 
-# Crear directorio para logs
-mkdir -p logs
+# Crear directorio temporal para logs
+mkdir -p demo_logs
 
 # Iniciar TCP Server
 cd server-tcp
-cargo run --release > ../logs/tcp.log 2>&1 &
+cargo run --release > ../demo_logs/tcp.log 2>&1 &
 TCP_PID=$!
 cd ..
 
 # Iniciar HTTP Server  
 cd server-http
-cargo run --release > ../logs/http.log 2>&1 &
+cargo run --release > ../demo_logs/http.log 2>&1 &
 HTTP_PID=$!
 cd ..
 
 # Iniciar gRPC Server
 cd server-grpc
-cargo run --release > ../logs/grpc.log 2>&1 &
+cargo run --release > ../demo_logs/grpc.log 2>&1 &
 GRPC_PID=$!
 cd ..
 
@@ -79,7 +79,7 @@ cleanup() {
     show_success "Servidores detenidos"
     echo ""
     echo "🎉 Demostración completada!"
-    echo "📊 Logs disponibles en ./logs/"
+    echo "📊 Logs disponibles en ./demo_logs/"
 }
 
 # Configurar cleanup al salir

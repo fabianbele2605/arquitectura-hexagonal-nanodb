@@ -207,4 +207,4 @@ Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](.
 
 **Desarrollado con ❤️ como demostración de Arquitectura Hexagonal en Rust**
 
-*🌍 También disponible en: [English](docs/README.en.md)*
+*🌍 También disponible en: [English](../README.md)*
