@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/NanoDB_Cluster/',
+  base: '/arquitectura-hexagonal-nanodb/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets'
