@@ -5,8 +5,20 @@
 [![Tests](https://img.shields.io/badge/tests-7%2F7%20passing-brightgreen.svg)](#)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Architecture](https://img.shields.io/badge/architecture-hexagonal-purple.svg)](#)
+[![Demo](https://img.shields.io/badge/🎬_Demo_Visual-Ver_Animación-ff69b4.svg)](https://fabianbele2605.github.io/arquitectura-hexagonal-nanodb/)
 
 > **Demostración lista para producción de Arquitectura Hexagonal implementando una base de datos en memoria con múltiples protocolos de comunicación**
+
+## 🎬 Demo Visual Interactivo
+
+**[🚀 VER ANIMACIÓN EN VIVO](https://fabianbele2605.github.io/arquitectura-hexagonal-nanodb/)**
+
+Explora la arquitectura hexagonal con una **animación interactiva profesional** que muestra:
+- ⚡ Flujo de datos en tiempo real entre protocolos
+- 🔧 Métricas técnicas (latencia P99, QPS, memoria)
+- 📊 Logs de implementación interna (DashMap, Tokio)
+- 🎨 Visualización de la arquitectura hexagonal
+- 🌐 Protocolos TCP, HTTP y gRPC en acción
 
 **🎯 Perfecto para:** Entrevistas técnicas • Portafolio profesional • Aprendizaje de arquitectura • Demostración de Rust
 
