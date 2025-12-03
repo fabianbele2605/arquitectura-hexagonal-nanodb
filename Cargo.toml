@@ -1,0 +1,14 @@
+[workspace]
+resolver = "2"
+members = [
+    "core",
+    "server-tcp",
+    "server-grpc",     # despues se ejecuta
+    "server-http",     
+    # "simulation-ui"   # despues se ejecuta    
+    "tcp-client"       
+]
+
+[workspace.dependencies]
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }

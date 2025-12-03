@@ -1,0 +1,8 @@
+[package]
+name = "nanodb-tcp-client"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+nanodb-core = { path = "../core" }
+tokio = { workspace = true }

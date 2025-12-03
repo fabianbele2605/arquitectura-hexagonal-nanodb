@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y protobuf-compiler
+      - name: Install protoc plugins
+        run: |
+          cargo install protoc-gen-prost protoc-gen-tonic
+      - name: Build release binaries
+        run: cargo build --release
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            target/release/nanodb-server-grpc
+            target/release/nanodb-server-http
+            target/release/nanodb-server-tcp
+            target/release/nanodb-tcp-client
+          body: |
+            ## NanoDB Protocol Arena Release
+
+            ### Binaries included:
+            - `nanodb-server-grpc` - gRPC Server
+            - `nanodb-server-http` - HTTP Rest API Server
+            - `nanodb-server-tcp` - TCP Binary Protocol Server
+            - `nanodb-tcp-client` - TCP Test Client
+
+            ### Usage:
+            ```bash
+            chmod +x nanodb-server-*
+            ./nanodb-server-http
+            ```
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
